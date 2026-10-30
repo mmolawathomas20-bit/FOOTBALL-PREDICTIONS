@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="FPBS — Football Prediction By Sonytizer. Match analysis, predictions and football fixtures.">
+<meta name="theme-color" content="#07150f">
+<title>FPBS | Football Prediction By Sonytizer</title>
+<link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<header class="topbar">
+  <a class="brand" href="#"><span class="logo">FP</span><span>FPBS<small>FOOTBALL PREDICTION BY SONYTIZER</small></span></a>
+  <button id="menuButton" class="menu" aria-label="Toggle menu">☰</button>
+  <nav id="nav"><a href="#predictions">Predictions</a><a href="#membership">Membership</a><a href="#fixtures">Fixtures</a><a href="#history">Performance</a><a href="#about">About</a><a href="#contact">Contact</a><button id="themeButton" class="outline">☀️ Theme</button></nav>
+</header>
+<main>
+<section class="hero">
+  <div class="hero-copy"><span class="eyebrow">⚽ FOOTBALL ANALYSIS • SOUTH AFRICA</span><h1>See the game.<br><em>Study the numbers.</em></h1><p>Welcome to Football Prediction By Sonytizer. Explore match analysis, prediction insights and football fixtures in one place.</p><div class="actions"><a class="button" href="#predictions">Explore predictions ↓</a><a class="button secondary" href="https://wa.me/27705589648" target="_blank" rel="noopener">Contact on WhatsApp</a></div><small class="muted">Predictions are estimates, never guarantees.</small></div>
+  <aside class="hero-panel"><div class="panel-top"><b>FPBS MATCH CENTRE</b><span class="pill">● READY</span></div><div class="ball">⚽</div><h2>Football insights, made simple.</h2><p class="muted">Match previews · Outcomes · History</p><div class="panel-stats"><div><b id="predictionCount">—</b><small>Public predictions</small></div><div><b id="accuracy">—</b><small>Settled accuracy</small></div></div><small class="muted">Accuracy appears after results are recorded.</small></aside>
+</section>
+<section id="predictions" class="section"><div class="section-title"><div><span class="eyebrow">MATCH CENTRE</span><h2>Public predictions</h2><p class="muted">Only publish researched predictions. Demo entries are labelled.</p></div><button class="outline" id="refreshPredictions">↻ Refresh</button></div>
+<div class="filters"><input id="search" placeholder="Search team or league…" aria-label="Search predictions"><select id="league"><option value="">All leagues</option></select></div><div id="predictionList" class="cards"><div class="empty">Loading predictions…</div></div></section>
+<section id="fixtures" class="section alternate"><div class="section-title"><div><span class="eyebrow">UPCOMING MATCHES</span><h2>Live fixture feed</h2><p class="muted">Requires an API-FOOTBALL key configured by the site owner.</p></div><button class="outline" id="loadFixtures">Load fixtures</button></div><div id="fixtureList" class="cards"><div class="empty">Live fixtures are not loaded yet.</div></div></section>
+<section id="history" class="section"><div class="section-title"><div><span class="eyebrow">TRANSPARENCY</span><h2>Prediction performance</h2><p class="muted">Statistics use only results the admin has marked as settled.</p></div></div><div class="metrics"><article><b id="settledCount">0</b><span>Settled predictions</span></article><article><b id="correctCount">0</b><span>Correct predictions</span></article><article><b id="accuracyBig">—</b><span>Recorded accuracy</span></article></div></section>
+<section id="membership" class="section">
+  <div class="section-title"><div><span class="eyebrow">FPBS PREMIUM</span><h2>Join for R200 / 30 days</h2><p class="muted">Membership is activated only after FPBS verifies that your EFT payment has arrived.</p></div></div>
+  <div class="contact-grid">
+    <div class="form eft-details">
+      <h3>Bank transfer details</h3>
+      <p><b>Bank:</b> Capitec Bank</p>
+      <p><b>Account holder:</b> Mr M Molekwa</p>
+      <p><b>Account number:</b> 1745463680</p>
+      <p><b>Branch code:</b> 470010</p>
+      <p><b>Reference:</b> Use your FPBS account email or full name.</p>
+      <p class="muted small">Please confirm the account details with FPBS before transferring money. Never send a banking PIN, password, or OTP.</p>
+      <a class="button" href="https://wa.me/27705589648?text=Hello%20FPBS%2C%20I%20want%20to%20join%20the%20R200%20premium%20membership." target="_blank" rel="noopener">Ask to join on WhatsApp</a>
+    </div>
+    <div class="form">
+      <h3>After you pay</h3>
+      <ol>
+        <li>Make the EFT and keep your payment reference.</li>
+        <li>Contact FPBS on WhatsApp or email with your name, account email, and payment reference.</li>
+        <li>Wait for manual confirmation. A screenshot alone does not activate membership.</li>
+        <li>Once verified, membership is valid for 30 days.</li>
+      </ol>
+      <p><b>Delivery:</b> Website, WhatsApp group/individual messages, and email, subject to setup and your contact preferences.</p>
+      <a class="button secondary" href="mailto:paparemo22@gmail.com?subject=FPBS%20EFT%20Membership">Send payment details by email</a>
+    </div>
+  </div>
+</section>
+<section id="account" class="section alternate">
+  <div class="section-title"><div><span class="eyebrow">MEMBER ACCOUNT</span><h2>Create an account or sign in</h2><p class="muted">Your account lets you submit your EFT reference and check membership status.</p></div></div>
+  <div class="contact-grid">
+    <form id="registerForm" class="form"><h3>New customer</h3><label>Full name<input id="registerName" required minlength="2" maxlength="100" autocomplete="name"></label><label>Email<input id="registerEmail" type="email" required maxlength="150" autocomplete="email"></label><label>Password (minimum 10 characters)<input id="registerPassword" type="password" required minlength="10" autocomplete="new-password"></label><button class="button">Create account</button></form>
+    <form id="customerLoginForm" class="form"><h3>Member sign-in</h3><label>Email<input id="customerEmail" type="email" required autocomplete="email"></label><label>Password<input id="customerPassword" type="password" required autocomplete="current-password"></label><button class="button">Sign in</button><button type="button" class="outline" id="customerLogout">Sign out</button></form>
+  </div>
+  <p id="customerStatus" class="muted" aria-live="polite">Create an account or sign in to view your membership status.</p>
+  <div id="customerPanel" class="form" hidden><h3>Your membership</h3><p id="memberSummary"></p><form id="paymentReferenceForm"><label>EFT payment reference<input id="paymentReference" required maxlength="120" placeholder="Reference shown on your bank transfer"></label><button class="button">Submit payment reference</button></form><button class="button secondary" id="loadMemberPremium">View premium predictions</button><div id="memberPremiumList" class="cards"></div></div>
+</section>
+<section id="premium" class="section alternate"><div class="premium"><div><span class="eyebrow">FPBS MEMBERS</span><h2>Premium predictions</h2><p class="muted">A protected area for members. Membership is managed manually after EFT funds are verified. Premium access must be activated by the FPBS admin.</p></div><button class="button" id="premiumButton">Member sign-in</button></div><div id="premiumList" class="cards"></div></section>
+<section id="about" class="section"><div class="about"><div><span class="eyebrow">ABOUT FPBS</span><h2>Football Prediction By Sonytizer</h2><p class="muted">FPBS shares football-related match previews, predictions and analysis. The aim is to present information clearly and encourage responsible decisions.</p></div><div class="about-list"><p>⚽ Match previews and predicted outcomes</p><p>📊 Transparent settled prediction history</p><p>📱 A responsive experience across devices</p><p>🛡️ No guaranteed wins or certain outcomes</p></div></div></section>
+<section id="contact" class="section alternate"><div class="section-title"><div><span class="eyebrow">GET IN TOUCH</span><h2>Contact FPBS</h2><p class="muted">For questions and business enquiries.</p></div></div><div class="contact-grid"><div class="contact-cards"><article><span>✉️</span><div><b>Email</b><a href="mailto:paparemo22@gmail.com">paparemo22@gmail.com</a></div></article><article><span>📱</span><div><b>Phone / WhatsApp</b><a href="https://wa.me/27705589648" target="_blank" rel="noopener">+27 70 558 9648</a></div></article><article><span>📍</span><div><b>Address</b><p>1083 Thabo Mbeki Drive, Lephalale, Limpopo, South Africa</p></div></article></div>
+<form id="contactForm" class="form"><label>Your name<input id="contactName" required maxlength="100"></label><label>Your email<input id="contactEmail" type="email" required maxlength="150"></label><label>Message<textarea id="contactMessage" required maxlength="3000"></textarea></label><button class="button">Prepare email</button><p id="contactStatus" class="muted small" aria-live="polite">Your email app will open with a prepared message.</p></form></div></section>
+<section class="section"><div class="warning"><b>⚠ Responsible gambling notice</b><p>Football predictions are uncertain and do not guarantee outcomes or profits. Sample entries are demonstrations, not verified fixtures or betting advice. If you choose to gamble, only do so where legally permitted and if you meet the applicable minimum age. Never risk money you cannot afford to lose.</p></div></section>
+<section id="admin" class="section admin-section"><details><summary>Admin dashboard</summary><div class="admin-box"><p class="muted">Sign in using the admin credentials configured in your server's .env file. Keep your token private.</p><form id="loginForm" class="form compact"><label>Admin email<input id="adminEmail" type="email" required></label><label>Password<input id="adminPassword" type="password" required></label><button class="button">Sign in</button></form><p id="adminStatus" class="small muted" aria-live="polite"></p><div id="adminTools" hidden><h3>Add prediction</h3><form id="predictionForm" class="form compact"><label>Home team<input name="home_team" required maxlength="80"></label><label>Away team<input name="away_team" required maxlength="80"></label><label>League<input name="league" required maxlength="80"></label><label>Kickoff (date and time)<input name="kickoff" type="datetime-local" required></label><label>Prediction<input name="prediction" required maxlength="80" placeholder="Home win / Draw / Over 2.5 goals"></label><label>Predicted score<input name="predicted_score" maxlength="20" placeholder="2-1"></label><label>Confidence (1–100)<input name="confidence" type="number" min="1" max="100" value="55" required></label><label>Notes<textarea name="notes" maxlength="1000"></textarea></label><label class="check"><input name="premium" type="checkbox"> Premium prediction (members only)</label><button class="button">Publish prediction</button></form><h3>Manage predictions</h3><div id="adminPredictionList" class="admin-list"></div><h3>Review EFT payment requests</h3><p class="muted small">Approve only after confirming funds have arrived in the bank account.</p><div id="adminPaymentList" class="admin-list"></div></div></div></details></section>
+</main>
+<footer><a class="brand" href="#"><span class="logo">FP</span><span>FPBS<small>FOOTBALL PREDICTION BY SONYTIZER</small></span></a><p class="muted">© <span id="year"></span> FPBS. Football analysis, not guarantees.</p><a href="https://wa.me/27705589648" target="_blank" rel="noopener" class="whatsapp">WhatsApp FPBS ↗</a></footer>
+<script src="/app.js"></script>
+</body></html>
